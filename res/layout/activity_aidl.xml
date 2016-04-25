@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+     <Button
+        android:id="@+id/bindButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="bind" />
+    <Button
+        android:id="@+id/callButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="common call" />
+    <Button
+        android:id="@+id/callbackButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="callback" />
+     <Button
+        android:id="@+id/objectCallButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="object call" />
+     <Button
+        android:id="@+id/messengerBindButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="messenger bind" />
+     <Button
+        android:id="@+id/messengerButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="messenger call" />
+</LinearLayout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yj.letgo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <uses-feature android:name="android.hardware.camera" />
+    <application
+        android:allowBackup="true"
+        android:name="TestApplication"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <activity
+            android:name="com.yj.letgo.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+         <activity
+            android:name="com.yj.letgo.common.MainActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.yj.letgo.aidl.ClientActivity"
+            android:label="@string/app_name" />
+
+		 <service android:name="com.yj.letgo.aidl.AidlService" android:process=":remote">
+			<intent-filter>
+				<action android:name="com.yj.letgo.aidl.AidlService" />
+			</intent-filter>
+		</service>
+		<service android:name="com.yj.letgo.aidl.MessengerService" android:process=":remote">
+			<intent-filter>
+				<action android:name="com.yj.letgo.aidl.MessengerService" />
+			</intent-filter>
+		</service>
+
+        <activity
+            android:name="com.yj.letgo.asynctask.AsyncTaskActivity"
+            android:label="@string/app_name" />
+
+       <activity
+            android:name="com.yj.letgo.customlistview.CustomListViewActivity"
+            android:label="@string/app_name"/>
+
+        <activity
+            android:name="com.yj.letgo.camera.SystemCameraActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.yj.letgo.camera.CustomCameraActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.yj.letgo.video.VideoViewActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.yj.letgo.html.HtmlCanvasActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.yj.letgo.crime.CrimeListActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.yj.letgo.crime.CrimePagerActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name="com.yj.letgo.diyviews.slidemenu.SlideMenuActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.yj.letgo.diyviews.slidemenu.InfoActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.yj.letgo.chatting.ChattingActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.yj.letgo.loopad.LoopAdActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.yj.letgo.viewpager.MainActivity"
+            android:label="@string/app_name" />
+
+         <activity
+            android:name="com.yj.letgo.bitmap.MainActivity"
+            android:label="@string/app_name"
+            android:hardwareAccelerated="false" />
+
+		<activity
+            android:name="com.yj.letgo.location.LocationActivity"
+            android:label="@string/app_name" />
+
+	   	<activity
+            android:name="com.yj.letgo.contentobserver.MainActivity"
+            android:label="@string/app_name" />
+
+	   <activity
+            android:name="com.yj.letgo.contentprovider.TeacherActivity"
+            android:label="@string/app_name" />
+        <provider
+            android:name="com.yj.letgo.contentprovider.TeacherContentProvider"
+            android:authorities="yj.android.contentProvider"
+            android:multiprocess="false" />
+
+         <activity
+           android:name="com.yj.letgo.qqauth.MainActivity"
+           android:label="@string/app_name">
+	        <intent-filter>
+	            <action android:name="android.intent.action.QQAUTH" />
+	        </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent222222" />
+                <!-- 100380359 100381104 222222 -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+         <activity
+            android:name="com.yj.letgo.sensors.ListViewActivity"
+            android:label="@string/app_name" />
+        <activity android:name="com.yj.letgo.sensors.Accelerometer"/>
+        <activity android:name="com.yj.letgo.sensors.AmbientTemperature"/>
+        <activity android:name="com.yj.letgo.sensors.Gravity"/>
+        <activity android:name="com.yj.letgo.sensors.Gyroscope"/>
+        <activity android:name="com.yj.letgo.sensors.Light"/>
+        <activity android:name="com.yj.letgo.sensors.LinearAccelerometer"/>
+        <activity android:name="com.yj.letgo.sensors.Magnetic"/>
+        <activity android:name="com.yj.letgo.sensors.Orientation"/>
+        <activity android:name="com.yj.letgo.sensors.Pressure"/>
+        <activity android:name="com.yj.letgo.sensors.Proximity"/>
+        <activity android:name="com.yj.letgo.sensors.Rotation"/>
+        <activity android:name="com.yj.letgo.sensors.Temperature"/>
+
+        <activity
+            android:name="com.yj.letgo.binderpool.BinderPoolActivity"
+            android:label="@string/app_name" />
+        <service android:name="com.yj.letgo.binderpool.BinderPoolService" android:process=":remote"/>
+
+        <activity
+            android:name="com.yj.letgo.touch.MainActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.yj.letgo.diyviews.slidingconflict.MainActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.yj.letgo.ble.central.CentralActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light"/>
+        <activity
+            android:theme="@android:style/Theme.Holo.Light"
+            android:name="com.yj.letgo.ble.central.DeviceControlActivity"/>
+        <service android:name="com.yj.letgo.ble.central.BluetoothLeService" android:enabled="true"/>
+
+        <activity
+            android:name="com.yj.letgo.ble.peripheral.PeripheralActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name="com.yj.letgo.tablayout.MainActivity"/>
+    </application>
+</manifest>
