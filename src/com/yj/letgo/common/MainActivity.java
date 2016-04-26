@@ -51,6 +51,7 @@ public class MainActivity extends BaseActivity{
     private int Notification_ID_MEDIA = 119;
     private Notification mediaNF;
     private PendingIntent pd;
+    private ReflectMethod  mReflectMethod = new ReflectMethod();
     
     public native String  stringFromJNI();
     
@@ -61,6 +62,7 @@ public class MainActivity extends BaseActivity{
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
+		
 		mContext = MainActivity.this;
 		initDb();
 		mRLayout = getWindow().getDecorView();
@@ -105,6 +107,8 @@ public class MainActivity extends BaseActivity{
 		btPerform[++i] = new BtPerform("ClearMediaNotification", i, Color.DKGRAY, new ClearMediaNotification());
 		btPerform[++i] = new BtPerform("CustomNotification", i, Color.DKGRAY, new CustomNotification());
 		btPerform[++i] = new BtPerform("ClearAll", i, Color.DKGRAY, new ClearAllNotification());
+		btPerform[++i] = new BtPerform("Reflect set prop", i, Color.GRAY, new setprop());
+		btPerform[++i] = new BtPerform("Reflect get prop", i, Color.GRAY, new getprop());
 		btPerform[++i] = new BtPerform("end", i, Color.BLACK, null);
 		return btPerform;
 	}
@@ -127,6 +131,27 @@ public class MainActivity extends BaseActivity{
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+	
+
+	
+	public class setprop implements Operation{
+		@Override
+		public void operate() {
+			mReflectMethod.invokeStaticMethod("com.yj.letgo.common.SystemProperties","set",
+					new Object[]{new String("myname"),new String("yangjiandagege")});
+
+			Util.showResultDialog(MainActivity.this, "yangjiandagege", "setprop");
+		}
+	}
+	
+	public class getprop implements Operation{
+		@Override
+		public void operate() {
+			String res = (String)mReflectMethod.invokeStaticMethod("com.yj.letgo.common.SystemProperties","get",
+					new Object[]{new String("myname"),new String("null")});
+			Util.showResultDialog(MainActivity.this, res, "getprop");
 		}
 	}
 	
