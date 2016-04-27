@@ -31,19 +31,21 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
-        <activity
-            android:name="com.yj.letgo.MainActivity"
-            android:label="@string/app_name" >
+        <activity android:name="com.yj.letgo.launcherpage.LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        
+        <activity
+            android:name="com.yj.letgo.MainActivity"
+            android:label="@string/app_name" />
 
          <activity
             android:name="com.yj.letgo.common.MainActivity"
             android:label="@string/app_name" />
+         
         <activity
             android:name="com.yj.letgo.aidl.ClientActivity"
             android:label="@string/app_name" />
