@@ -23,6 +23,7 @@ public class MainActivity extends BaseActivity{
 		btPerform[++i] = new BtPerform("Asynctask", i, Color.CYAN, MainActivity.this, com.yj.letgo.asynctask.AsyncTaskActivity.class);
 		btPerform[++i] = new BtPerform("DIY ViewGroup : My ViewPager", i, Color.YELLOW, MainActivity.this, com.yj.letgo.diyviews.slidingconflict.MainActivity.class);
 		btPerform[++i] = new BtPerform("DIY ViewGroup : SlideMenu", i, Color.YELLOW, MainActivity.this, com.yj.letgo.diyviews.slidemenu.SlideMenuActivity.class);
+		btPerform[++i] = new BtPerform("DIY ViewGroup : DragLinearLayout", i, Color.YELLOW, MainActivity.this, com.yj.letgo.diyviews.viewdraghelper.MainActivity.class);
 		btPerform[++i] = new BtPerform("Tab layout", i, Color.CYAN, MainActivity.this, com.yj.letgo.tablayout.MainActivity.class);
 		btPerform[++i] = new BtPerform("end", i, Color.BLACK, null);
 		return btPerform;
